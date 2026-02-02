@@ -10,17 +10,13 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
     return AppBar(
       leadingWidth: 150,
       leading: Padding(
-        padding: const EdgeInsets.only(left: 16.0),
-        child: Row(
-          children: [
-            Image.asset('assets/images/appLogo.png', width: 32, height: 32),
-            const SizedBox(width: 8),
-            Text(
-              'SubscriptionBD',
-              style: theme.textTheme.titleMedium?.copyWith(fontWeight: FontWeight.bold),
-            ),
-          ],
-        ),
+        padding: const EdgeInsets.only(left: 12.0),
+        child: Image.asset('assets/images/appLogo.png', width: 32, height: 32),
+      ),
+      title: Text(
+        'SubscriptionBD',
+        style: theme.textTheme.titleMedium?.copyWith(fontWeight: FontWeight.bold),
+        overflow: TextOverflow.ellipsis,
       ),
       actions: [
         IconButton(
