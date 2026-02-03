@@ -58,7 +58,7 @@ class _CategorySelectorState extends State<CategorySelector> {
                     ),
                     child: Icon(
                       category['icon'],
-                      color: isSelected ? Colors.transparent : AppColors.borderLight,
+                      color: isSelected ? Colors.white : AppColors.textGrey,
                     ),
                   ),
                   const SizedBox(height: 8),

@@ -1,7 +1,7 @@
 import 'package:digital_shop/widgets/filter_bottom_sheet.dart';
-import 'package:digital_shop/widgets/hop_search_filter_bar.dart';
 import 'package:digital_shop/widgets/product_grid.dart';
 import 'package:digital_shop/widgets/section_header.dart';
+import 'package:digital_shop/widgets/shop_search_filter_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 
@@ -60,7 +60,7 @@ class _SliverHeaderDelegate extends SliverPersistentHeaderDelegate {
 
   @override
   Widget build(BuildContext context, double shrinkOffset, bool overlapsContent) {
-    return child;
+    return SizedBox(height: maxExtent, child: child);
   }
 
   @override

@@ -6,7 +6,6 @@ class ProductGrid extends StatelessWidget {
   final String category;
   const ProductGrid({super.key, required this.category});
 
-  // Dummy Data
   final List<Map<String, dynamic>> _allProducts = const [
     {
       'name': 'Netflix Premium',
@@ -58,20 +57,39 @@ class ProductGrid extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    //filter products based on selected category
+    final bp = ResponsiveBreakpoints.of(context);
+
+    final bool isMobile = bp.isMobile;
+    final bool isTablet = bp.isTablet;
+
+    final double maxTileWidth = isMobile
+        ? 190
+        : (isTablet ? 240 : 310); // desktop tiles look better
+
+    final double childAspectRatio = isMobile ? 0.74 : (isTablet ? 0.82 : 0.95);
+
     final filteredProducts = category == 'All'
         ? _allProducts
         : _allProducts.where((p) => p['category'] == category).toList();
 
+    if (filteredProducts.isEmpty) {
+      return Padding(
+        padding: const EdgeInsets.all(16),
+        child: Center(
+          child: Text('No products found', style: Theme.of(context).textTheme.bodyMedium),
+        ),
+      );
+    }
+
     return GridView.builder(
       shrinkWrap: true,
       physics: const NeverScrollableScrollPhysics(),
-      padding: const EdgeInsets.symmetric(horizontal: 16),
-      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-        crossAxisCount: ResponsiveBreakpoints.of(context).isMobile ? 2 : 4,
+      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+      gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
+        maxCrossAxisExtent: maxTileWidth,
         crossAxisSpacing: 16,
         mainAxisSpacing: 16,
-        childAspectRatio: 0.75,
+        childAspectRatio: childAspectRatio,
       ),
       itemCount: filteredProducts.length,
       itemBuilder: (context, index) {

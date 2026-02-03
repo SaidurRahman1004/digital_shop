@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:digital_shop/widgets/offer_card.dart';
 import 'package:flutter/material.dart';
 import 'package:responsive_framework/responsive_framework.dart';
@@ -14,6 +16,8 @@ class OfferCarousel extends StatefulWidget {
 
 class _OfferCarouselState extends State<OfferCarousel> {
   final _pageController = PageController();
+  Timer? _timer;
+  int _currentPage = 0;
   //Dumy Data to Shoe in Carousel
   final List<Map<String, String>> _offers = [
     {
@@ -49,6 +53,33 @@ class _OfferCarouselState extends State<OfferCarousel> {
   ];
 
   @override
+  void initState() {
+    super.initState();
+    _timer = Timer.periodic(const Duration(seconds: 3), (Timer timer) {
+      if (_currentPage < _offers.length - 1) {
+        _currentPage++;
+      } else {
+        _currentPage = 0;
+      }
+
+      if (_pageController.hasClients) {
+        _pageController.animateToPage(
+          _currentPage,
+          duration: const Duration(milliseconds: 500),
+          curve: Curves.easeIn,
+        );
+      }
+    });
+  }
+
+  @override
+  void dispose() {
+    _timer?.cancel();
+    _pageController.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     final isMobile = ResponsiveBreakpoints.of(context).isMobile;
     final double carouselHeight = isMobile ? 180.0 : 300.0;
@@ -58,6 +89,11 @@ class _OfferCarouselState extends State<OfferCarousel> {
           height: carouselHeight,
           child: PageView.builder(
             controller: _pageController,
+            onPageChanged: (int page) {
+              setState(() {
+                _currentPage = page;
+              });
+            },
             itemCount: _offers.length,
             itemBuilder: (_, index) {
               return OfferCard(data: _offers[index], onTap: () {});
