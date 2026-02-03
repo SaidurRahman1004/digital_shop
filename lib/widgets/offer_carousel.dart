@@ -31,6 +31,21 @@ class _OfferCarouselState extends State<OfferCarousel> {
       'description': 'Student Discount Available',
       'image': 'https://images.unsplash.com/photo-1626908924463-a335737db358?q=80&w=1974',
     },
+    {
+      'title': 'Xbox Game Pass',
+      'description': 'Ultimate Gaming Subscription',
+      'image': 'https://images.unsplash.com/photo-1511512578047-dfb367046420?q=80&w=1974',
+    },
+    {
+      'title': 'Amazon Prime',
+      'description': 'Free Delivery + Movies',
+      'image': 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=1974',
+    },
+    {
+      'title': 'Disney+ Hotstar',
+      'description': 'Enjoy Marvel & Disney Shows',
+      'image': 'https://images.unsplash.com/photo-1465101046530-73398c7f28ca?q=80&w=1974',
+    },
   ];
 
   @override
