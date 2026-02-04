@@ -14,6 +14,9 @@ class ProductGrid extends StatelessWidget {
       'image': 'https://images.unsplash.com/photo-1616469829935-c2f334624b38?q=80&w=1974',
       'badge': 'Popular',
       'status': 'On Sale',
+      'validity': '1 Month',
+      'description':
+          'Enjoy ad-free music for up to 6 family members living under one roof with Spotify Family plan.',
     },
     {
       'name': 'Spotify Family',
@@ -22,6 +25,9 @@ class ProductGrid extends StatelessWidget {
       'image': 'https://images.unsplash.com/photo-1593642702821-c8da6771f0c6?q=80&w=1974',
       'badge': '20% Off',
       'status': 'In Stock',
+      'validity': '1 Month',
+      'description':
+          'Enjoy ad-free music for up to 6 family members living under one roof with Spotify Family plan.',
     },
     {
       'name': 'Coursera Plus',
@@ -29,6 +35,9 @@ class ProductGrid extends StatelessWidget {
       'price': 49.00,
       'image': 'https://images.unsplash.com/photo-1501504905252-473c47e087f8?q=80&w=1974',
       'status': 'Sold Out',
+      'validity': '1 Month',
+      'description':
+          'Enjoy ad-free music for up to 6 family members living under one roof with Spotify Family plan.',
     },
     {
       'name': 'VS Code Pro',
@@ -37,6 +46,9 @@ class ProductGrid extends StatelessWidget {
       'image': 'https://images.unsplash.com/photo-1607706189992-eae57192d32d?q=80&w=1974',
       'badge': 'New',
       'status': 'In Stock',
+      'validity': '1 Month',
+      'description':
+          'Enjoy ad-free music for up to 6 family members living under one roof with Spotify Family plan.',
     },
     {
       'name': 'Xbox Game Pass',
@@ -44,6 +56,9 @@ class ProductGrid extends StatelessWidget {
       'price': 14.99,
       'image': 'https://images.unsplash.com/photo-1580327344181-c1163234e5a0?q=80&w=1974',
       'status': 'Coming Soon',
+      'validity': '1 Month',
+      'description':
+          'Enjoy ad-free music for up to 6 family members living under one roof with Spotify Family plan.',
     },
     {
       'name': 'Adobe Photoshop',
@@ -52,6 +67,9 @@ class ProductGrid extends StatelessWidget {
       'image': 'https://images.unsplash.com/photo-1558153493-a232a03dccc7?q=80&w=1974',
       'badge': '15% Off',
       'status': 'Stock Out',
+      'validity': '1 Month',
+      'description':
+          'Enjoy ad-free music for up to 6 family members living under one roof with Spotify Family plan.',
     },
   ];
 

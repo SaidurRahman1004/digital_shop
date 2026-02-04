@@ -2,6 +2,7 @@ import 'dart:ui';
 
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:digital_shop/config/colors.dart';
+import 'package:digital_shop/screens/product%20_details_page.dart';
 import 'package:digital_shop/widgets/custo_snk.dart';
 import 'package:flutter/material.dart';
 
@@ -90,7 +91,14 @@ class ProductCard extends StatelessWidget {
               if (!available) {
                 mySnkmsg('Product is $statusText', context, isError: true);
               } else {
-                // TODO: Navigate to product details
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) {
+                      return ProductDetailsScreen(product: product, allProducts: []);
+                    },
+                  ),
+                );
               }
             },
             child: ClipRRect(
