@@ -12,7 +12,7 @@ class ShopSearchFilterBar extends StatelessWidget {
       height: 68,
       child: Container(
         padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-        color: Theme.of(context).scaffoldBackgroundColor,
+        color: Theme.of(context).focusColor,
         child: Row(
           children: [
             Expanded(

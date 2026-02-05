@@ -36,7 +36,7 @@ class _SplashScreenState extends State<SplashScreen> with SingleTickerProviderSt
 
     // Navigate after 3 seconds
     Future.delayed(const Duration(seconds: 3), () {
-      Navigator.pushReplacement(context, MaterialPageRoute(builder: (_) => LoginScreen())); //HomeScreen
+      Navigator.pushReplacement(context, MaterialPageRoute(builder: (_) => HomeScreen())); //LoginScreen
     });
   }
 

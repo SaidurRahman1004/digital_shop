@@ -1,4 +1,5 @@
 import 'package:digital_shop/screens/homeContect/home_content.dart';
+import 'package:digital_shop/screens/payments/cart_screen_list.dart';
 import 'package:digital_shop/screens/shop_screen.dart';
 import 'package:digital_shop/widgets/app_bar.dart';
 import 'package:flutter/material.dart';
@@ -18,7 +19,7 @@ class _HomeScreenState extends State<HomeScreen> {
   static const List<Widget> _widgetOptions = <Widget>[
     HomeContent(),
     ShopScreen(),
-    Center(child: Text('Welcome to the Cart  Screen!')),
+    CartScreenList(),
     Center(child: Text('Welcome to the Profile  Screen!')),
   ];
 
