@@ -7,6 +7,7 @@ class AppbarCustomAll extends StatelessWidget implements PreferredSizeWidget {
   final List<Widget>? actions;
   final bool showDefaultActions;
 
+
   const AppbarCustomAll({
     super.key,
     this.title,
