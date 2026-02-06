@@ -1,3 +1,4 @@
+import 'package:digital_shop/screens/payments/payment_checkout.dart';
 import 'package:digital_shop/widgets/AppbarCustom.dart';
 import 'package:digital_shop/widgets/custo_snk.dart';
 import 'package:flutter/material.dart';
@@ -114,6 +115,15 @@ class _CartScreenListState extends State<CartScreenList> {
               height: 55,
               child: ElevatedButton(
                 onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => PaymentCheckout(
+                        items: _cartItems,
+                        totalAmount: total,
+                      ),
+                    ),
+                  );
                   // navigate
                   mySnkmsg('Comming...', context);
                 },
