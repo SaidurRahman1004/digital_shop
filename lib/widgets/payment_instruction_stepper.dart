@@ -17,7 +17,8 @@ class PaymentInstructionStepper extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(children: [
+    return Column(
+        children: [
       _buildStep(
         context,
         icon: Iconsax.mobile,

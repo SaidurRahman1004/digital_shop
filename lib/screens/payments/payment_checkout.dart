@@ -1,4 +1,5 @@
 import 'dart:math';
+import 'package:digital_shop/screens/payments/paymet_seccess_summery.dart';
 import 'package:digital_shop/widgets/AppbarCustom.dart';
 import 'package:digital_shop/widgets/custom_text_field.dart';
 import 'package:digital_shop/widgets/section_header.dart';
@@ -240,6 +241,17 @@ class _PaymentCheckoutState extends State<PaymentCheckout> {
   }
 
   void _handleSubmit() {
-    if (_formKey.currentState!.validate()) {}
+    if (_formKey.currentState!.validate()) {
+      Navigator.push(
+        context,  MaterialPageRoute(
+        builder: (context) => PaymentSuccessSummary(
+          orderId: _orderId,
+          paymentId: "PAY${Random().nextInt(999999)}", // Dummy payment ID
+          items: widget.items,
+          totalAmount: widget.totalAmount,
+        ),
+      ),
+      );
+    }
   }
 }
