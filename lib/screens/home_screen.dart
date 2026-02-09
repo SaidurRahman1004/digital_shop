@@ -5,6 +5,8 @@ import 'package:digital_shop/widgets/app_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
 
+import 'Profile/profile_screen.dart';
+
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
 
@@ -20,7 +22,7 @@ class _HomeScreenState extends State<HomeScreen> {
     HomeContent(),
     ShopScreen(),
     CartScreenList(),
-    Center(child: Text('Welcome to the Profile  Screen!')),
+    ProfileScreen(),
   ];
 
   //tap to Change Icon
