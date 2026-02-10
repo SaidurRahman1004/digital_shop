@@ -1,3 +1,4 @@
+import 'package:digital_shop/screens/Profile/wish_list_screen.dart';
 import 'package:digital_shop/widgets/AppbarCustom.dart';
 import 'package:digital_shop/widgets/profile/profile_action_card.dart';
 import 'package:digital_shop/widgets/section_header.dart';
@@ -6,6 +7,7 @@ import 'package:iconsax/iconsax.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 import '../../config/colors.dart';
 import '../../widgets/profile/user_profile_card.dart';
+import 'account_details_screen.dart';
 
 class ProfileScreen extends StatefulWidget {
   const ProfileScreen({super.key});
@@ -145,7 +147,9 @@ class _ProfileScreenState extends State<ProfileScreen> {
           icon: Iconsax.user_edit,
           title: 'Account Details',
           subtitle: 'Update your profile information',
-          onTap: () {},
+          onTap: () {
+            Navigator.push(context, MaterialPageRoute(builder: (_) => const AccountDetailsScreen()));
+          },
         ),
         ProfileActionMenuCard(
           icon: Iconsax.message_text,
@@ -163,7 +167,9 @@ class _ProfileScreenState extends State<ProfileScreen> {
           icon: Iconsax.heart,
           title: 'Wishlist',
           subtitle: 'View your saved products',
-          onTap: () {},
+          onTap: () {
+            Navigator.push(context, MaterialPageRoute(builder: (_) => const WishlistScreen()));
+          },
         ),
         ProfileActionMenuCard(
           icon: Iconsax.support,
