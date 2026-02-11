@@ -8,6 +8,7 @@ import 'package:responsive_framework/responsive_framework.dart';
 import '../../config/colors.dart';
 import '../../widgets/profile/user_profile_card.dart';
 import 'account_details_screen.dart';
+import 'contact_section_admin.dart';
 
 class ProfileScreen extends StatefulWidget {
   const ProfileScreen({super.key});
@@ -175,7 +176,20 @@ class _ProfileScreenState extends State<ProfileScreen> {
           icon: Iconsax.support,
           title: 'Contact Support',
           subtitle: 'Get help and support',
-          onTap: () {},
+          onTap: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (_) => Scaffold(
+                  appBar: AppbarCustomAll(title: "Contact Us"),
+                  body: Padding(
+                    padding: const EdgeInsets.all(16.0),
+                    child: AdminContactSection(),
+                  ),
+                ),
+              ),
+            );
+          },
         ),
         ProfileActionMenuCard(
           icon: Iconsax.logout_1,

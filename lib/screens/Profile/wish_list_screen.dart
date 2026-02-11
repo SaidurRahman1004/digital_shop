@@ -4,6 +4,7 @@ import 'package:iconsax/iconsax.dart';
 import '../../config/colors.dart';
 import '../../widgets/AppbarCustom.dart';
 import '../../widgets/product_grid.dart';
+import '../../widgets/profile/support_contact_bottom_sheet.dart';
 
 class WishlistScreen extends StatefulWidget {
   const WishlistScreen({super.key});
@@ -63,7 +64,16 @@ class _WishlistScreenState extends State<WishlistScreen> {
       body: _wishlistItems.isEmpty
           ? _buildEmptyWishlist()
           : ProductGrid(key: UniqueKey(), products: _wishlistItems),
+      //contact support button
+      floatingActionButton: FloatingActionButton(
+        onPressed: ()=>showSupportContact(context),
+          child: const Icon(Iconsax.call),
+        tooltip: "Contact Support",
+      ),
+      //floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked, // এটিকে মাঝখানে আনার জন্য
+
     );
+
   }
 
   Widget _buildEmptyWishlist() {
@@ -103,5 +113,6 @@ class _WishlistScreenState extends State<WishlistScreen> {
         ),
       ),
     );
+
   }
 }
