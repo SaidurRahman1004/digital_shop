@@ -54,31 +54,55 @@ class OrderTracker extends StatelessWidget {
     bool isError = false,
   }) {
     return Row(
+      crossAxisAlignment: .start,
       children: [
-        CircleAvatar(
-          radius: 12,
-          backgroundColor: isDone
-              ? Colors.green
-              : isError
-              ? Colors.red
-              : Colors.grey,
-          child: Icon(
-            isDone
-                ? Icons.check
-                : isError
-                ? Icons.close
-                : Icons.circle,
-            size: 14,
-            color: Colors.white,
-          ),
+        Column(
+          children: [
+            CircleAvatar(
+              radius: 12,
+              backgroundColor: isDone
+                  ? Colors.green
+                  : isError
+                  ? Colors.red
+                  : Colors.grey.shade400,
+              child: Icon(
+                isDone
+                    ? Icons.check
+                    : isError
+                    ? Icons.close
+                    : Icons.circle,
+                size: 14,
+                color: Colors.white,
+              ),
+            ),
+            if (!isLast)
+              Container(
+                margin: const EdgeInsets.only(top: 4),
+                height: 50, // Fixed height for the line
+                width: 2,
+                color: isDone ? Colors.green : Colors.grey.shade300,
+              ),
+          ],
         ),
         const SizedBox(width: 12),
-        Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(title, style: Theme.of(context).textTheme.bodyMedium),
-            Text(sub,overflow: TextOverflow.ellipsis,textAlign: TextAlign.justify, style: Theme.of(context).textTheme.bodySmall),
-          ],
+        Expanded(
+          child: Column(
+            crossAxisAlignment: .start,
+            children: [
+              Text(
+                title,
+                style: Theme.of(
+                  context,
+                ).textTheme.titleSmall?.copyWith(fontWeight: FontWeight.bold),
+              ),
+              const SizedBox(height: 4),
+              Text(
+                sub,
+                softWrap: true,
+                style: Theme.of(context).textTheme.bodySmall,
+              ),
+            ],
+          ),
         ),
       ],
     );

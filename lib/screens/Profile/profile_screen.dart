@@ -9,6 +9,7 @@ import '../../config/colors.dart';
 import '../../widgets/profile/user_profile_card.dart';
 import 'account_details_screen.dart';
 import 'contact_section_admin.dart';
+import 'order_tracking_screen.dart';
 
 class ProfileScreen extends StatefulWidget {
   const ProfileScreen({super.key});
@@ -162,7 +163,10 @@ class _ProfileScreenState extends State<ProfileScreen> {
           icon: Iconsax.box_1,
           title: 'My Orders',
           subtitle: 'Track your recent orders',
-          onTap: () {},
+          onTap: () {
+            Navigator.push(context, MaterialPageRoute(builder: (_) => const OrderTrackingScreen()));
+
+          },
         ),
         ProfileActionMenuCard(
           icon: Iconsax.heart,
