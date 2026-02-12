@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
 
+import '../screens/auth/login_screen.dart';
+
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   const CustomAppBar({super.key});
 
@@ -15,7 +17,9 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
       ),
       title: Text(
         'SubscriptionBD',
-        style: theme.textTheme.titleMedium?.copyWith(fontWeight: FontWeight.bold),
+        style: theme.textTheme.titleMedium?.copyWith(
+          fontWeight: FontWeight.bold,
+        ),
         overflow: TextOverflow.ellipsis,
       ),
       actions: [
@@ -28,6 +32,16 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
           onPressed: () {},
           icon: const Icon(Iconsax.notification),
           color: theme.colorScheme.onSurface,
+        ),
+        TextButton.icon(
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (_) => LoginScreen()),
+            );
+          },
+          label: Text('Login'),
+          icon: Icon(Iconsax.login),
         ),
         const SizedBox(width: 8),
       ],
