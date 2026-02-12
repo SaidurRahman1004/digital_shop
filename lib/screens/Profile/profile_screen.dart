@@ -9,6 +9,7 @@ import '../../config/colors.dart';
 import '../../widgets/profile/user_profile_card.dart';
 import 'account_details_screen.dart';
 import 'contact_section_admin.dart';
+import 'inbox_screen.dart';
 import 'order_tracking_screen.dart';
 
 class ProfileScreen extends StatefulWidget {
@@ -150,22 +151,32 @@ class _ProfileScreenState extends State<ProfileScreen> {
           title: 'Account Details',
           subtitle: 'Update your profile information',
           onTap: () {
-            Navigator.push(context, MaterialPageRoute(builder: (_) => const AccountDetailsScreen()));
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (_) => const AccountDetailsScreen()),
+            );
           },
         ),
         ProfileActionMenuCard(
           icon: Iconsax.message_text,
           title: 'My Messages',
           subtitle: 'View notifications and product updates',
-          onTap: () {},
+          onTap: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (_) => const InboxScreen()),
+            );
+          },
         ),
         ProfileActionMenuCard(
           icon: Iconsax.box_1,
           title: 'My Orders',
           subtitle: 'Track your recent orders',
           onTap: () {
-            Navigator.push(context, MaterialPageRoute(builder: (_) => const OrderTrackingScreen()));
-
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (_) => const OrderTrackingScreen()),
+            );
           },
         ),
         ProfileActionMenuCard(
@@ -173,7 +184,10 @@ class _ProfileScreenState extends State<ProfileScreen> {
           title: 'Wishlist',
           subtitle: 'View your saved products',
           onTap: () {
-            Navigator.push(context, MaterialPageRoute(builder: (_) => const WishlistScreen()));
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (_) => const WishlistScreen()),
+            );
           },
         ),
         ProfileActionMenuCard(
