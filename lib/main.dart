@@ -25,7 +25,8 @@ class DigitalShopApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: AppTheme.light,
       themeMode: ThemeMode.system,
-      home: const SplashScreen(),
+      home: const
+      SplashScreen(),
     );
   }
 }
